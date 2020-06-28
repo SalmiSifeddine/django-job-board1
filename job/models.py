@@ -22,6 +22,7 @@ class job(models.Model):
     experience = models.IntegerField(default=0)
     category = models.ForeignKey('category', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='jobs/')
+    slug = models.SlugField(blank=True, null=True)
 
     def __str__(self):
         return self.title
